@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width= , initial-scale=1.0">
+        <title>Index</title>
+    </head>
+    
+    <body>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Rol</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuarios in Usuarios %}
+                <tr>
+                    <td>{{usuarios.id_user}}</td>
+                    <td>{{usuarios.nombre}}</td>
+                    <td>{{usuarios.user}}</td>
+                    <td>{{usuarios.contra}}</td>
+                    <td>{{usuarios.rol}}</td>
+                    <td>{{usuarios.tel}}</td>
+                    <td>{{usuarios.email}}</td>
+                    <td>
+                        <a href="{% url 'editar' usuarios.id_user %}" role="button">Editar</a>
+                        |
+                        <a href="{% url 'eliminar' usuarios.id_user %}" role="button">Borrar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Registro</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+
+    <body>
+        <form name="registrar" method="post" action="../insertUser/">
+            {% csrf_token %}
+            <pre>
+                <h1>Registro de Usuarios</h1>
+                Nombre: <input type="text" name="name" id="name"><br>
+                Usuario:<input type="text" name="user" id="user"><br>
+                Contraseña:<input type="password" name="pass" id="password"><br>
+                Rol:<input type="text" name="rol" id="rol">
+                Telefono:<input type="text" name="tel" id="tel">
+                email:<input type="text" name="email" id="email">
+                <br>
+                <br>
+                <input type="submit" name="btnExport" value="Registrar">
+            </pre>
+        </form>
+    </body>
+</html>

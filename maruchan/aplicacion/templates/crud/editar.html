@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Editar usuarios</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+
+    <body>
+        <form name="editar" method="post" action="../updateUser/">
+            {% csrf_token %}
+                <h1>Editar usuarios</h1>
+                <input type="hidden" name="id" id="id" value={{usuarios.id_user}}>
+                Nombre: <input type="text" name="name" id="name" value="{{usuarios.nombre}}"><br>
+                Usuario:<input type="text" name="user" id="user" value="{{usuarios.user}}"><br>
+                Contraseña:<input type="password" name="pass" id="password" value="{{usuarios.contra}}"><br>
+                Telefono:<input type="text" name="tel" id="tel" value="{{usuarios.tel}}"><br>
+                email:<input type="text" name="email" id="email" value="{{usuarios.email}}"><br>
+                <br>
+                <br>
+                <input type="submit" name="btnedit" value="Editar">
+        </form>
+    </body>
+</html>
