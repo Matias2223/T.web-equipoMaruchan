@@ -5,23 +5,96 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Registro</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <link href="/aplicacion/design/estilos.css" rel="stylesheet" type="text/css" />
+        <script src="/aplicacion/design/js/jquery-3.7.1.min.js"></script>
+
+
     </head>
 
     <body>
+       
         <form name="registrar" method="post" action="../insertUser/">
             {% csrf_token %}
             <pre>
-                <h1>Registro de Usuarios</h1>
+                <DIV class="contenedor" align="center">
+                <font face="impact" size="6">
+                    <h1>Registro</h1>
+                </font>
+                <font face="Century Gothic">
                 Nombre: <input type="text" name="name" id="name"><br>
                 Usuario:<input type="text" name="user" id="user"><br>
                 Contraseña:<input type="password" name="pass" id="password"><br>
-                Rol:<input type="text" name="rol" id="rol">
+                <input type="hidden" name="rol" id="rol" value = "usuario">
                 Telefono:<input type="text" name="tel" id="tel">
                 email:<input type="text" name="email" id="email">
-                <br>
-                <br>
+                
                 <input type="submit" name="btnExport" value="Registrar">
+                <input type="submit" name="btncancelar" value="Cancelar" href = "{% url 'index' %}">
+                </font>
+                
+                </DIV>
+                
             </pre>
         </form>
+
     </body>
+    <style>
+    body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url('/aplicacion/templates/paginas/BackgroundRegistro.jpg');
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.contenedor{
+    position: relative;
+    width: 500px;
+    background-color: beige;
+    border: 10px solid rgba(244, 122, 61, .6);
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.input-contenedor{
+    position: relative;
+    margin: 30px 0;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-contenedor input{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: -35 0 5px;
+    color:  #000000;
+}
+
+
+button{
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: #F47A3D;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;   
+}   
+    </style>
 </html>

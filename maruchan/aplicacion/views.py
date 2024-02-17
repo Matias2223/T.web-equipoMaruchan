@@ -34,7 +34,7 @@ def insertUser(request):
     correo = request.POST['email']  
     us = usuarios(nombre = name, user = usuario, contra = pas, rol = rolu, tel = cel, email = correo)
     us.save()
-    return render(request, 'paginas/registro.html',{})
+    return redirect('../index')
 
 def editar(request, id):
     usuario = usuarios.objects.get(id_user = id)
